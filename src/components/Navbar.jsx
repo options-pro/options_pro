@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <div>
       <div>
-        <div className="w-full h-[70px] flex navbar pr-3 pt-3">
+        <div className="w-full h-[70px] flex navbar pr-3 pt-3 dark:bg-secondary-dark-bg">
           {userProfile ? (
             <div className="flex gap-3 md:gap-5">
               {userProfile.image && (

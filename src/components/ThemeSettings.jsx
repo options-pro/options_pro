@@ -1,15 +1,9 @@
 import React from "react";
 import { MdOutlineCancel } from "react-icons/md";
-import { BsCheck } from "react-icons/bs";
-// import { useStateContext } from "../contexts/ContextProvider";
+import { useStateContext } from "../contexts/ContextProvider";
 
-const ThemeSettings = ({
-  themeSettings,
-  setThemeSettings,
-  currentMode,
-  setMode,
-}) => {
-  //   const { setMode, currentMode, setThemeSettings } = useStateContext();
+const ThemeSettings = () => {
+  const { setMode, currentMode, setThemeSettings } = useStateContext();
 
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">

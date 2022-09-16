@@ -6,22 +6,30 @@ import { FiSettings } from "react-icons/fi";
 import { Route, Routes } from "react-router-dom";
 
 import { Page1, Page2, Page3, Page4, Page5, Page6, HomePage } from "./pages";
-// import { useStateContext } from "./contexts/ContextProvider";
+import { useStateContext } from "./contexts/ContextProvider";
 import ThemeSettings from "./components/ThemeSettings";
 
 const App = () => {
-  const [themeSettings, setThemeSettings] = useState(false);
-  const [currentMode, setCurrentMode] = useState("light");
+  // const [themeSettings, setThemeSettings] = useState(false);
+  // const [currentMode, setCurrentMode] = useState("Light");
+  const { currentMode, themeSettings, setThemeSettings } =
+    useStateContext();
+
+  // const setMode = (e) => {
+  //   setCurrentMode(e.target.value);
+  //   localStorage.setItem("themeMode", e.target.value);
+  //   setThemeSettings(false);
+  // };
 
   // const themeSettings = true;
   return (
-    <div className="h-[100vh]">
+    <div className={currentMode === "Dark" ? "h-[100vh] dark" : "h-[100vh]"}>
       <BrowserRouter>
-        <div className="flex relative">
+        <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
             <button
               type="button"
-              className="text-3xl p-3 bg-blue-900 hover:drop-shadow-2xl hover:bg-light-gray text-white"
+              className="text-3xl p-3 bg-blue-900 hover:drop-shadow-2xl text-white"
               style={{ borderRadius: "50%" }}
               onClick={() => setThemeSettings(true)}
             >
@@ -39,16 +47,7 @@ const App = () => {
           <Route path="/page5" element={<Page5 />} />
           <Route path="/page6" element={<Page6 />} />
         </Routes>
-        <div>
-          {themeSettings && (
-            <ThemeSettings
-              themeSettings={themeSettings}
-              setThemeSettings={setThemeSettings}
-              currentMode={currentMode}
-              setMode={setCurrentMode}
-            />
-          )}
-        </div>
+        <div>{themeSettings && <ThemeSettings />}</div>
       </BrowserRouter>
     </div>
   );
