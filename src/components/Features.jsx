@@ -10,7 +10,7 @@ const Features = () => {
         <div className="grid grid-cols-2 gap-x-24 gap-y-10">
           {links.map((link, index) => (
             <NavLink
-              to={`/Page${index + 1}`}
+              to={`/page${index + 1}`}
               key={link.name}
               // onClick={handleCloseSideBar}
               // style={({ isActive }) => ({

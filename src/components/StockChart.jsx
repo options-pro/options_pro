@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
+
 // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 // const stonksUrl = `${proxyUrl}/query1.finance.yahoo.com/v8/finance/chart/GME`;
 // import { chartData } from "../data/chartData";
