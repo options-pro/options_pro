@@ -75,7 +75,7 @@ const StockChart = () => {
 
     getStonks().then((data) => {
       const gme = data.chart.result[0];
-      console.log(gme);
+      // console.log(gme);
       setPrice("$" + gme.meta.regularMarketPrice.toFixed(2));
       setPriceTime(new Date(gme.meta.regularMarketTime * 1000));
       const quote = gme.indicators.quote[0];

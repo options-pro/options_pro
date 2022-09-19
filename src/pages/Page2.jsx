@@ -4,25 +4,17 @@ import { IoMdCalendar } from "react-icons/io";
 import { MdDownload } from "react-icons/md";
 import { GiFunnel } from "react-icons/gi";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
-import { BsArrowUp, BsArrowDown } from "react-icons/bs";
+import { tableData } from "../data/tableData";
 
 const columns = [
   {
     title: "Symbol",
     dataIndex: "symbol",
     key: "symbol",
-    render: (_, { symbol }) => (
-      <>
-        {symbol?.map((sym, index) => (
-          <div key={index} className="flex flex-col justify-center text-lg">
-            <p>{sym.sym}</p>
-
-            <p>
-              <span className="text-blue-600">Lot:</span> {sym.lotsize}
-            </p>
-          </div>
-        ))}
-      </>
+    render: (text) => (
+      <div className="text-lg">
+        <p>{text}</p>
+      </div>
     ),
   },
   {
@@ -31,8 +23,8 @@ const columns = [
     key: "oiTrend",
     render: (text) => (
       <div className="flex flex-row items-center justify-start gap-2 text-lg">
-        {true && <span className="text-blue-500">Agg. </span>}
-        {text === "New Short" || text === "Long Cover" ? (
+        {/* {true && <span className="text-blue-500">Agg. </span>} */}
+        {text !== "Long Build Up" || text === "Long Cover" ? (
           <p className="text-red-500">{text}</p>
         ) : (
           <p className="text-green-500">{text}</p>
@@ -97,44 +89,69 @@ const columns = [
     ),
   },
   {
-    title: "Vol & Del",
-    key: "vad",
-    dataIndex: "vad",
-    render: (_, { vad }) => (
-      <div className="flex flex-col text-lg">
-        <div>
-          {vad?.first > 0 ? (
-            <div className="flex items-center gap-1">
-              <p className="text-blue-500">{Math.abs(vad.first).toFixed(1)}x</p>
-              <BsArrowUp color="green" />
-            </div>
-          ) : (
-            <div className="flex items-center gap-1">
-              <p>{Math.abs(vad.first).toFixed(1)}x</p>
-              <BsArrowDown color="red" />
-            </div>
-          )}
-        </div>
-        <div>
-          {vad?.second > 0 ? (
-            <div className="flex items-center gap-1">
-              <p className="text-blue-500">
-                {Math.abs(vad.second).toFixed(1)}x
-              </p>
-              <BsArrowUp color="green" />
-            </div>
-          ) : (
-            <div className="flex items-center gap-1">
-              <p>{Math.abs(vad.second).toFixed(1)}x</p>
-              <BsArrowDown color="red" />
-            </div>
-          )}
-        </div>
+    title: "Quantity/Trades",
+    key: "qut",
+    dataIndex: "qut",
+    render: (text) => (
+      <div className="text-lg">
+        <p>{text}</p>
       </div>
     ),
   },
 ];
-const data = [
+
+const dataSource = tableData.map((data, index) => ({
+  key: index,
+  symbol: data[1],
+  oiTrend: data[6],
+  spotPrice: {
+    price: data[2].toFixed(1).toLocaleString("en-US"),
+    change: data[5].toFixed(1),
+  },
+  coi: {
+    price: data[0].toLocaleString("en-US"),
+    change: data[3].toFixed(1),
+  },
+  qut: data[4].toFixed(1).toLocaleString("en-US"),
+}));
+
+const titleFunction = () => {
+  const today = new Date();
+  const todayArray = today.toString().split(" ").slice(0, 4);
+  const reqString = `${todayArray[0]}, ${todayArray[2]} ${todayArray[1]} ${todayArray[3]}`;
+
+  return (
+    <div className="flex flex-row justify-between p-2">
+      <div className="flex flex-row items-center gap-2">
+        <IoMdCalendar size={25} color={"#2b079e"} />
+        <p className="font-bold text-lg text-[#2b079e]">{reqString}</p>
+      </div>
+      <div className="flex flex-row items-center gap-4">
+        <MdDownload size={25} color={"rgb(43, 7, 158)"} />
+        <GiFunnel size={25} color={"rgb(43, 7, 158)"} />
+      </div>
+    </div>
+  );
+};
+
+const Page2 = () => {
+  return (
+    <div className="flex flex-col p-10 justify-center m-auto">
+      <Table
+        className="mt-10"
+        columns={columns}
+        dataSource={dataSource}
+        pagination={true}
+        title={titleFunction}
+      />
+    </div>
+  );
+};
+
+export default Page2;
+
+/*
+const data3 = [
   {
     key: "1",
     symbol: [{ sym: "INDIACEM", lotsize: "2,900" }],
@@ -168,36 +185,4 @@ const data = [
     vad: { first: -0.9, second: -1.0 },
   },
 ];
-
-const titleFunction = () => {
-  const today = new Date();
-  const todayArray = today.toString().split(" ").slice(0, 4);
-  const reqString = `${todayArray[0]}, ${todayArray[2]} ${todayArray[1]} ${todayArray[3]}`;
-
-  return (
-    <div className="flex flex-row justify-between p-2">
-      <div className="flex flex-row items-center gap-2">
-        <IoMdCalendar size={25} color={"#2b079e"} />
-        <p className="font-bold text-lg text-[#2b079e]">{reqString}</p>
-      </div>
-      <div className="flex flex-row items-center gap-4">
-        <MdDownload size={25} color={"rgb(43, 7, 158)"} />
-        <GiFunnel size={25} color={"rgb(43, 7, 158)"} />
-      </div>
-    </div>
-  );
-};
-
-const Page2 = () => (
-  <div className="flex flex-col p-10 justify-center m-auto">
-    <Table
-      className="mt-10"
-      columns={columns}
-      dataSource={data}
-      pagination={true}
-      title={titleFunction}
-    />
-  </div>
-);
-
-export default Page2;
+*/
