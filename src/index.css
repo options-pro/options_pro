@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
 @tailwind base;
 @tailwind components;
@@ -29,4 +29,11 @@
   margin-bottom: 15px;
   margin-left: 50px; */
   padding: 20px;
+}
+
+.ant-table-thead .ant-table-cell {
+  color: rgb(43, 7, 158);
+  font-size: 20px;
+  font-weight: bold;
+  /* border: 2px solid rgb(205, 205, 205); */
 }

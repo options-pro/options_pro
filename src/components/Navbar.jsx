@@ -50,11 +50,13 @@ const Navbar = () => {
           )}
         </div>
         <div className="options-pro-logo-container absolute top-[20px] left-[20px]">
-          <img
-            src={logo}
-            alt="options-pro-logo"
-            className="h-[100px] w-[100px] z-100 "
-          />
+          <Link to="/">
+            <img
+              src={logo}
+              alt="options-pro-logo"
+              className="h-[100px] w-[100px] z-100 "
+            />
+          </Link>
         </div>
       </div>
     </div>

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import { useStateContext } from "../contexts/ContextProvider";
+import { stockOptions } from "../data/dummyLinks";
 import axios from "axios";
 import { Select } from "antd";
 const { Option } = Select;
-
-const stocks = ["nifty", "sbi", "bajaj", "icici"];
 
 const options = {
   method: "GET",
@@ -117,8 +116,8 @@ const StockChart = () => {
             option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
           }
         >
-          <Option value="Nifty">Nifty</Option>
-          {stocks?.map((stock, index) => (
+          {/* <Option value="NIFTY">NIFTY</Option> */}
+          {stockOptions?.map((stock, index) => (
             <Option key={index} value={stock}>
               {stock}
             </Option>
