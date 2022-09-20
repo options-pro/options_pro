@@ -16,8 +16,8 @@ const Navbar = () => {
         <div className="w-full h-[70px] flex navbar pr-3 pt-3 dark:bg-secondary-dark-bg">
           <p className="xl:text-lg sm:text-sm font-bold flex-nowrap text-blue-900 dark:text-white mr-4 mt-2">
             {userProfile?.userName
-              ? "Welcome!"
-              : `Welcome, ${userProfile.userName}!`}
+              ? `Welcome, ${userProfile.userName}!`
+              : `Welcome!`}
           </p>
           {userProfile ? (
             <div className="flex gap-3 md:gap-5">
