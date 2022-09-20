@@ -1,5 +1,3 @@
-import { MdDarkMode } from "react-icons/md";
-
 export const chartData = {
   series: [
     {
