@@ -14,18 +14,25 @@ const Navbar = () => {
     <div>
       <div>
         <div className="w-full h-[70px] flex navbar pr-3 pt-3 dark:bg-secondary-dark-bg">
+          <p className="xl:text-lg sm:text-sm font-bold flex-nowrap text-blue-900 dark:text-white mr-4 mt-2">
+            {userProfile?.userName
+              ? "Welcome!"
+              : `Welcome, ${userProfile.userName}!`}
+          </p>
           {userProfile ? (
             <div className="flex gap-3 md:gap-5">
               {userProfile.image && (
                 <Link to="/">
                   <>
-                    <img
-                      width={45}
-                      height={45}
-                      className="rounded-full cursor-pointer"
-                      src={userProfile.image}
-                      alt="profile"
-                    />
+                    <div className="w-[45px] h-[45px] rounded-full">
+                      <img
+                        // width={45}
+                        // height={45}
+                        className="rounded-full cursor-pointer dark:border-dashed dark:border-white dark:border-2"
+                        src={userProfile.image}
+                        alt="profile"
+                      />
+                    </div>
                   </>
                 </Link>
               )}
