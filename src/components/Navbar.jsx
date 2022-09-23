@@ -70,4 +70,5 @@ const Navbar = () => {
   );
 };
 
+//console.log('hello')
 export default Navbar;
