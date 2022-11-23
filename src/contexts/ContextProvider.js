@@ -4,22 +4,22 @@ const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [currentMode, setCurrentMode] = useState("Light");
-  const [themeSettings, setThemeSettings] = useState(false);
+  // const [themeSettings, setThemeSettings] = useState(false);
 
-  const setMode = (e) => {
-    setCurrentMode(e.target.value);
-    localStorage.setItem("themeMode", e.target.value);
+  // const setMode = (e) => {
+  //   setCurrentMode(e.target.value);
+  //   localStorage.setItem("themeMode", e.target.value);
 
-    setThemeSettings(false);
-  };
+  //   setThemeSettings(false);
+  // };
 
   return (
     <StateContext.Provider
       value={{
         currentMode,
-        setMode,
-        themeSettings,
-        setThemeSettings,
+        setCurrentMode,
+        // themeSettings,
+        // setThemeSettings,
       }}
     >
       {children}

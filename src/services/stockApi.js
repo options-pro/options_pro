@@ -15,7 +15,7 @@ export const stockApi = createApi({
   endpoints: (builder) => ({
     getStocks: builder.query({
       query: ({ symbol }) =>
-        createRequest(`?interval=5m&symbol=${symbol}&range=1d&region=IN`),
+        createRequest(`?interval=15m&symbol=${symbol}&range=1d&region=IN`),
     }),
   }),
 });

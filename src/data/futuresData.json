@@ -1,0 +1,198 @@
+{
+  "topLb": [
+    {
+      "SYMBOL": "BAJAJFINSV",
+      "%_OI_change": 12.98670324,
+      "%_Price_change": 2.619066569
+    },
+    {
+      "SYMBOL": "TATACONSUM",
+      "%_OI_change": 6.481783578,
+      "%_Price_change": 3.550917063
+    },
+    {
+      "SYMBOL": "BHARTIARTL",
+      "%_OI_change": 2.588103352,
+      "%_Price_change": 1.162950729
+    },
+    {
+      "SYMBOL": "SBIN",
+      "%_OI_change": 2.311864608,
+      "%_Price_change": 0.385882353
+    },
+    {
+      "SYMBOL": "GRASIM",
+      "%_OI_change": 1.913279746,
+      "%_Price_change": 0.378280166
+    }
+  ],
+  "topLc": [
+    {
+      "SYMBOL": "COALINDIA",
+      "%_OI_change": -3.340906054,
+      "%_Price_change": -1.916524702
+    },
+    {
+      "SYMBOL": "ICICIBANK",
+      "%_OI_change": -2.185765669,
+      "%_Price_change": -1.459483827
+    },
+    {
+      "SYMBOL": "BRITANNIA",
+      "%_OI_change": -2.249806051,
+      "%_Price_change": -0.789807218
+    },
+    {
+      "SYMBOL": "CIPLA",
+      "%_OI_change": -0.752537627,
+      "%_Price_change": -1.487794309
+    },
+    {
+      "SYMBOL": "JSWSTEEL",
+      "%_OI_change": -1.172195522,
+      "%_Price_change": -0.794721847
+    }
+  ],
+  "topSc": [
+    {
+      "SYMBOL": "TITAN",
+      "%_OI_change": -4.306617892,
+      "%_Price_change": 0.666116369
+    },
+    {
+      "SYMBOL": "EICHERMOT",
+      "%_OI_change": -1.565579155,
+      "%_Price_change": 1.573502047
+    },
+    {
+      "SYMBOL": "BPCL",
+      "%_OI_change": -2.280171328,
+      "%_Price_change": 0.821542675
+    },
+    {
+      "SYMBOL": "ASIANPAINT",
+      "%_OI_change": -0.865435356,
+      "%_Price_change": 1.620179266
+    },
+    {
+      "SYMBOL": "HEROMOTOCO",
+      "%_OI_change": -0.299058844,
+      "%_Price_change": 1.372590478
+    }
+  ],
+  "topSb": [
+    {
+      "SYMBOL": "HINDALCO",
+      "%_OI_change": 9.772207638,
+      "%_Price_change": -3.883826879
+    },
+    {
+      "SYMBOL": "RELIANCE",
+      "%_OI_change": 11.8833434,
+      "%_Price_change": -2.939782786
+    },
+    {
+      "SYMBOL": "SBILIFE",
+      "%_OI_change": 7.867897037,
+      "%_Price_change": -2.449025656
+    },
+    {
+      "SYMBOL": "TCS",
+      "%_OI_change": 5.363438694,
+      "%_Price_change": -2.474191489
+    },
+    {
+      "SYMBOL": "TECHM",
+      "%_OI_change": 4.985387657,
+      "%_Price_change": -2.155933463
+    }
+  ],
+  "topOiGainers": [
+    {
+      "SYMBOL": "BAJAJFINSV",
+      "%_OI_change": 12.98670324
+    },
+    {
+      "SYMBOL": "RELIANCE",
+      "%_OI_change": 11.8833434
+    },
+    {
+      "SYMBOL": "HINDALCO",
+      "%_OI_change": 9.772207638
+    },
+    {
+      "SYMBOL": "SBILIFE",
+      "%_OI_change": 7.867897037
+    },
+    {
+      "SYMBOL": "DRREDDY",
+      "%_OI_change": 7.415015572
+    }
+  ],
+  "topOiLosers": [
+    {
+      "SYMBOL": "TITAN",
+      "%_OI_change": -4.306617892
+    },
+    {
+      "SYMBOL": "COALINDIA",
+      "%_OI_change": -3.340906054
+    },
+    {
+      "SYMBOL": "BPCL",
+      "%_OI_change": -2.280171328
+    },
+    {
+      "SYMBOL": "BRITANNIA",
+      "%_OI_change": -2.249806051
+    },
+    {
+      "SYMBOL": "ICICIBANK",
+      "%_OI_change": -2.185765669
+    }
+  ],
+  "topPriceGainers": [
+    {
+      "SYMBOL": "TATACONSUM",
+      "%_Price_change": 3.550917063
+    },
+    {
+      "SYMBOL": "BAJAJFINSV",
+      "%_Price_change": 2.619066569
+    },
+    {
+      "SYMBOL": "ASIANPAINT",
+      "%_Price_change": 1.620179266
+    },
+    {
+      "SYMBOL": "EICHERMOT",
+      "%_Price_change": 1.573502047
+    },
+    {
+      "SYMBOL": "HEROMOTOCO",
+      "%_Price_change": 1.372590478
+    }
+  ],
+  "topPriceLosers": [
+    {
+      "SYMBOL": "HINDALCO",
+      "%_Price_change": -3.883826879
+    },
+    {
+      "SYMBOL": "RELIANCE",
+      "%_Price_change": -2.939782786
+    },
+    {
+      "SYMBOL": "ONGC",
+      "%_Price_change": -2.813852814
+    },
+    {
+      "SYMBOL": "TCS",
+      "%_Price_change": -2.474191489
+    },
+    {
+      "SYMBOL": "SBILIFE",
+      "%_Price_change": -2.449025656
+    }
+  ]
+}

@@ -5,14 +5,17 @@ import { MdDownload } from "react-icons/md";
 import { GiFunnel } from "react-icons/gi";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
 import { tableData } from "../data/tableData";
+import { ColorRing } from "react-loader-spinner";
+// import { useGetFnoQuery } from "../services/fnoApi";
 
 const columns = [
   {
     title: "Symbol",
     dataIndex: "symbol",
     key: "symbol",
+    width: "15vw",
     render: (text) => (
-      <div className="text-lg">
+      <div className="text-sm md:text-lg">
         <p>{text}</p>
       </div>
     ),
@@ -21,8 +24,9 @@ const columns = [
     title: "OI Trend",
     dataIndex: "oiTrend",
     key: "oiTrend",
+    width: "15vw",
     render: (text) => (
-      <div className="flex flex-row items-center justify-start gap-2 text-lg">
+      <div className="flex flex-row items-center justify-start gap-2 text-sm md:text-lg">
         {/* {true && <span className="text-blue-500">Agg. </span>} */}
         {text !== "Long Build Up" || text === "Long Cover" ? (
           <p className="text-red-500">{text}</p>
@@ -36,12 +40,13 @@ const columns = [
     title: "Spot Price",
     dataIndex: "spotPrice",
     key: "spotPrice",
+    width: "15vw",
     render: (_, { spotPrice }) => (
-      <div className="flex flex-col">
+      <div className="flex flex-col text-sm md:text-lg">
         <div>
-          <p className="text-black text-lg">{spotPrice?.price}</p>
+          <p className="">{spotPrice?.price}</p>
         </div>
-        <div className="text-lg">
+        <div className="">
           {spotPrice?.change > 0 ? (
             <div className="flex items-center gap-1">
               <GoTriangleUp color="green" />
@@ -65,12 +70,13 @@ const columns = [
     title: "Cum. Open Interest",
     key: "coi",
     dataIndex: "coi",
+    width: "15vw",
     render: (_, { coi }) => (
-      <div className="flex flex-col">
+      <div className="flex flex-col text-sm md:text-lg">
         <div>
-          <p className="text-black text-lg">{coi?.price}</p>
+          <p className="">{coi?.price}</p>
         </div>
-        <div className="text-lg">
+        <div className="">
           {coi?.change > 0 ? (
             <div className="flex items-center gap-1">
               <GoTriangleUp color="green" />
@@ -92,8 +98,9 @@ const columns = [
     title: "Quantity/Trades",
     key: "qut",
     dataIndex: "qut",
+    width: "15vw",
     render: (text) => (
-      <div className="text-lg">
+      <div className="text-sm md:text-lg">
         <p>{text}</p>
       </div>
     ),
@@ -119,24 +126,64 @@ const titleFunction = () => {
   const today = new Date();
   const todayArray = today.toString().split(" ").slice(0, 4);
   const reqString = `${todayArray[0]}, ${todayArray[2]} ${todayArray[1]} ${todayArray[3]}`;
-
   return (
     <div className="flex flex-row justify-between p-2">
       <div className="flex flex-row items-center gap-2">
-        <IoMdCalendar size={25} color={"#2b079e"} />
-        <p className="font-bold text-lg text-[#2b079e]">{reqString}</p>
+        <IoMdCalendar size={25} />
+        <p className="font-bold text-lg">{reqString}</p>
       </div>
       <div className="flex flex-row items-center gap-4">
-        <MdDownload size={25} color={"rgb(43, 7, 158)"} />
-        <GiFunnel size={25} color={"rgb(43, 7, 158)"} />
+        <MdDownload size={25} />
+        <GiFunnel size={25} />
       </div>
     </div>
   );
 };
 
 const Page2 = () => {
+  // const { data: fnoData, isFetching } = useGetFnoQuery();
+  // if (isFetching) {
+  //   console.log("loading...");
+  //   return (
+  //     <div className="h-screen flex items-center justify-center">
+  //       <ColorRing
+  //         visible={true}
+  //         height="80"
+  //         width="80"
+  //         ariaLabel="blocks-loading"
+  //         wrapperStyle={{}}
+  //         wrapperClass="blocks-wrapper"
+  //         colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+  //       />
+  //     </div>
+  //   );
+  // }
+
+  // console.log(fnoData);
+  // const date = Object.keys(fnoData)[0];
+  // console.log(date, typeof date);
+
+  // const dataSource = fnoData?.[date]?.map((data, index) => ({
+  //   key: index,
+  //   symbol: data?.SYMBOL,
+  //   oiTrend: data?.OI_Trend,
+  //   spotPrice: {
+  //     price: data?.CLOSE?.toFixed(1).toLocaleString("en-US"),
+  //     change: data ? data["%_Price_change"]?.toFixed(1) : null,
+  //   },
+  //   coi: {
+  //     price: data?.OPEN_INT?.toLocaleString("en-US"),
+  //     change: data ? data["%_OI_change"]?.toFixed(1) : null,
+  //   },
+  //   qut: data
+  //     ? data["Quantity/Trades"]?.toFixed(1).toLocaleString("en-US")
+  //     : null,
+  // }));
+
+  // console.log(dataSource);
+
   return (
-    <div className="flex flex-col p-10 justify-center m-auto">
+    <div className="flex justify-center items-center">
       <Table
         className="mt-10"
         columns={columns}
